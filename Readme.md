@@ -11,7 +11,6 @@ https://wirenboard.com/en/product/WB-MRM2-mini/
 - Simplified Modbus RTU/ASCII interaction with customizable parameters.
 - Integration with the well-established github.com/goburrow/modbus package.
 - Use of github.com/shopspring/decimal for precise decimal operations.
-- Centralized error handling for better debugging and stability.
 
 ## Dependencies:
 - github.com/goburrow/modbus: For core Modbus functionality.
@@ -38,9 +37,9 @@ go build -o gomobilemodbus.aar -target=android .
 ```
 Don't use "go mod vendor" because it will create a vendor folder with all the dependencies and the gomobile tool will not be able to find the dependencies.
 
-## Usage:
+## Usage GoMobile Library in Android Java/Kotlin project:
 
-buld.gradle
+Afrer import gomobilemodbus.aar in Android Studio project, add in your buld.gradle
 ```java
 dependencies {
 ...
@@ -53,7 +52,7 @@ import gomobilemodbus.Gomobilemodbus;
 
 ```
 
-### Examples Standard Modbus commands:
+### Java Examples for Standard Modbus commands:
 Read Coils
 ```java
 String Modbusresult = Gomobilemodbus.modbusRequest("/dev/ttyS3", "46", "rc", "0", "1");
