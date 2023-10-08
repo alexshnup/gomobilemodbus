@@ -7,26 +7,11 @@ import (
 
 	"github.com/goburrow/modbus"
 	"github.com/shopspring/decimal"
-
-	"net/http"
-
-	"crypto/md5"
-	"encoding/hex"
 )
 
 var (
 	DeviceSN string
 )
-
-func GetMD5Hash(text string) string {
-	hasher := md5.New()
-	hasher.Write([]byte(text))
-	return hex.EncodeToString(hasher.Sum(nil))
-}
-
-func SayName(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Hello, I'm a machine and my name is [whatever]"))
-}
 
 var needDisableInputAction bool
 
